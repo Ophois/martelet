@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
-
+import { IconsModule } from '../icons/icons.module';
+import { RouterModule } from '@angular/router';
+import { UiModule } from '../ui/ui.module';
 
 
 @NgModule({
@@ -13,12 +15,15 @@ import { NavComponent } from './components/nav/nav.component';
     NavComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
-    NavComponent
+    NavComponent,
+    IconsModule,
+    UiModule
   ]
 })
 export class CoreModule { }
