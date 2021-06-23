@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UiComponent implements OnInit {
 
+  public open = true;
+
   constructor() { }
 
   ngOnInit(): void {
