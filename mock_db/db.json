@@ -4,9 +4,9 @@
       "tjmHt": 1200,
       "nbJours": 2,
       "tva": 20,
-      "state": "CANCELED",
+      "state": "CONFIRMED",
       "typePresta": "coaching",
-      "client": "toto",
+      "client": "Christophe2",
       "comment": null,
       "id": 2
     },
