@@ -1,0 +1,5 @@
+<app-template-container title="Edit order">
+  <app-form-client [init]="item" (submitted)=edit($event)
+                   *ngIf="item$ | async as item">
+  </app-form-client>
+</app-template-container>

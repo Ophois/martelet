@@ -8,6 +8,7 @@ import { VersionService } from '../../services/version.service';
 })
 export class NavComponent implements OnInit {
 
+
   /* on injecte les services dans le constructeur avant utilisation */
   constructor(private versionService: VersionService) { }
 

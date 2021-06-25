@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ClientsService } from 'src/app/clients/services/clients.service';
 import { StateOrder } from 'src/app/core/enums/state-order.enum';
+import { Client } from 'src/app/core/models/client';
 import { Order } from 'src/app/core/models/order';
 
 
@@ -15,8 +17,25 @@ export class FormOrderComponent implements OnInit {
   @Output() submitted: EventEmitter<Order> = new EventEmitter<Order>();
   public form!: FormGroup;
   public states = Object.values(StateOrder);
+  //liste des clients pour menu déroulant (tableau vide)
+  // public clients!: Clients[];
+  public clients: Client[] = [];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private clientService: ClientsService) {
+    //récupération de la liste des clients
+    clientService.collection.subscribe((data) => {
+      //console.log(data);
+      //this.clients = data;
+      //parcours des données récupérées depuis l'API
+      data.forEach((element) => {
+        //console.log(element.state);
+        //si state <> INACTIVE, on ajoute dans le tableau qui servira au Select
+        if(element.state !== 'INACTIVE') this.clients.push(element);
+      });
+
+    });
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -37,4 +56,5 @@ export class FormOrderComponent implements OnInit {
   public onSubmit(): void {
     this.submitted.emit(this.form.value);
   }
+
 }

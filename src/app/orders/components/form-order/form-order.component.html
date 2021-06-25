@@ -16,7 +16,10 @@
 
   <div class="form-group">
     <label for="client">Client: </label>
-    <input type="text" class="form-control" id="client" formControlName="client">
+    <!--<input type="text" class="form-control" id="client" formControlName="client">-->
+    <select class="form-control" formControlName="client" id="client">
+      <option *ngFor="let clt of clients" [ngValue]="clt.name">{{ clt.name }}</option>
+    </select>
     <div class="alert alert-danger" *ngIf="form.controls['client'].invalid && form.controls['client'].touched">
       Champs invalid
     </div>

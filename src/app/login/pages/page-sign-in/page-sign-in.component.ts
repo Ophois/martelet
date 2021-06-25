@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageSignInComponent implements OnInit {
 
+  public titre: string = "Accueil";
+  private nb: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeTitre() {
+    this.nb++;
+    this.titre= `J'ai changé le titre ${this.nb} fois`;
   }
 
 }

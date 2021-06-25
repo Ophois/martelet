@@ -6,7 +6,7 @@
       "tva": 20,
       "state": "CANCELED",
       "typePresta": "coaching",
-      "client": "ddd",
+      "client": "toto",
       "comment": null,
       "id": 2
     },
@@ -16,19 +16,29 @@
       "tva": 20,
       "state": "OPTION",
       "typePresta": "test",
-      "client": "CCI MARTELET",
+      "client": "Christophe2",
       "comment": "une souris verte",
       "id": 3
+    },
+    {
+      "tjmHt": 1200,
+      "nbJours": 1,
+      "tva": 20,
+      "state": "OPTION",
+      "typePresta": "test 123",
+      "client": "Modis",
+      "comment": "en version select pour le client",
+      "id": 4
     }
   ],
   "clients": [
     {
-      "state": "ACTIVE",
-      "tva": 20,
-      "id": 1,
       "name": "Christophe2",
-      "totalCaHt": 12000,
-      "comment": "un comment pour client christophe2"
+      "tva": 20,
+      "totalCaHt": 2000,
+      "state": "ACTIVE",
+      "comment": "un comment pour client christophe2",
+      "id": 1
     },
     {
       "state": "INACTIVE",
@@ -39,11 +49,11 @@
       "comment": "un comment pour client modis"
     },
     {
+      "name": "toto",
       "tva": 20,
-      "state": "ACTIVE",
-      "name": "modis",
-      "totalCaHt": 0,
-      "comment": "rsger",
+      "totalCaHt": 11,
+      "state": "PROSPECT",
+      "comment": "youpeeeeeee !!!",
       "id": 3
     }
   ]
